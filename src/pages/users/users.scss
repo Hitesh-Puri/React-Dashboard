@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+
+.credit-home {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+
+    .box {
+        padding: 20px;
+        border: 1px solid rgb(230, 230, 230);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .box1, .box3{
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+    .box2{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}

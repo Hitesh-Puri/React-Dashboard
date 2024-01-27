@@ -1,0 +1,41 @@
+.ratioBox {
+    display: flex;
+    height: 100%;
+  
+    .ratioBoxInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      .title {
+        display: flex;
+        flex-direction: column;
+  
+        .mainTitle {
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+  
+        .subTitle {
+          display: flex;
+          font-size: 12px;
+          margin-top: 3px;
+          color: gray;
+          justify-content: start;
+          align-items: center;
+  
+          ion-icon {
+            margin-right: 5px;
+          }
+        }
+      }
+      .timesRatio {
+        background-color: #e5fee6;
+        border-radius: 5px;
+        padding: 5px 10px;
+        p {
+            color: #459443;
+        }
+      }
+    }
+  }

@@ -1,0 +1,40 @@
+.netRevenueBox {
+    display: flex;
+    height: 100%;
+    
+    .netRevenueBoxInfo {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+        .title {
+          display: flex;
+          flex-direction: column;
+    
+          .mainTitle {
+            font-size: 1.4rem;
+            font-weight: 700;
+          }
+    
+          .subTitle {
+            display: flex;
+            font-size: 12px;
+            margin-top: 3px;
+            color: gray;
+            justify-content: start;
+            align-items: center;
+    
+            ion-icon {
+              margin-right: 5px;
+            }
+          }
+        }
+        .netRevenueChart {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+        }
+      }
+    }

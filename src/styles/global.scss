@@ -1,0 +1,37 @@
+@import "./variables.scss";
+@import "./responsive.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  margin-top: 25px;
+}
+
+.menuContainer {
+  width: 450px;
+  padding-right: 10px;
+
+  @include lg {
+    width: max-content;
+  }
+}
+
+.contentContainer {
+  padding: 5px 20px;
+  width: 100%;
+}

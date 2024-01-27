@@ -1,0 +1,65 @@
+.contact-info-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: space-between;
+  padding: 50px;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .left-section {
+    width: 100%; // No change in width as it's controlled by the grid layout
+  }
+
+  .right-section {
+    width: 100%; // No change in width as it's controlled by the grid layout
+  }
+
+  .companyName {
+    display: flex;
+    flex-direction: column;
+    .company-name {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .company-website {
+      font-size: 0.85rem;
+      color: gray;
+    }
+  }
+
+  .divider {
+    border: 0.5px solid rgb(216, 216, 216);
+    margin: 35px 0;
+  }
+
+  .incorporation-date,
+  .pan-number {
+    margin-top: 1rem;
+  }
+
+  .address {
+    margin: 1.4rem 0;
+  }
+
+  .company-cin,
+  .pan-number,
+  .incorporation-date,
+  .address {
+    color: gray;
+    strong {
+      color: #000;
+    }
+  }
+
+  .comEmail {
+    color: gray;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,46 @@
+.metrices-container {
+    display: flex;
+    flex-direction: column;
+    .title {
+        margin-bottom: 0.85rem;
+      .mainTitle {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+    }
+    .metrice-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      margin: 0 0 8px 0;
+      max-width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+      ion-icon {
+        color: #d5d5d5;
+        margin-right: 0.45rem;
+      }
+      .metrice-details {
+        flex-grow: 1;
+        .metrice-name {
+          font-weight: bold;
+          font-size: 0.95rem;
+        }
+        .metrice-subTitle {
+            font-size: 0.80rem;
+            color: #d5d5d5;
+        }
+      }
+      .left-section {
+        display: flex;
+        align-items: center;
+        .metrice-age {
+            font-weight: 700;
+            margin-right: 0.45rem;
+        }
+      }
+    }
+  }
+  

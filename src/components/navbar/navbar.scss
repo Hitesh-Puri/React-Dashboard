@@ -1,0 +1,68 @@
+@import "../../styles/responsive.scss";
+
+.navbar {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 10px;
+
+    img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .companyCredentials {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.7rem;
+      }
+
+      span:nth-child(1) {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      span:nth-child(2) {
+        color: rgb(200, 200, 200);
+      }
+
+      span:nth-child(3) {
+        color: #5790a6;
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        color: rgb(211, 211, 211);
+        font-size: 0.7rem;
+      }
+
+      ion-icon {
+        color: rgb(211, 211, 211);
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.creditScoreBox {
+    display: flex;
+    height: 100%;
+  
+    .creditScoreBoxInfo {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      .title {
+        display: flex;
+        flex-direction: column;
+  
+        .mainTitle {
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+  
+        .subTitle {
+          display: flex;
+          font-size: 12px;
+          margin-top: 3px;
+          color: gray;
+          justify-content: start;
+          align-items: center;
+  
+          ion-icon {
+            margin-right: 5px;
+          }
+        }
+      }
+      .creditScoreLine {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        .credScore {
+          display: flex;
+          justify-content: baseline;
+          align-items: baseline;
+          span:nth-child(1) {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 5px;
+            color: #459443;
+          }
+          span:nth-child(2) {
+            font-size: 0.85rem;
+            color: #cecece;
+          }
+        }
+        progress {
+          width: 100%;
+          &::-webkit-progress-value {
+            background-color: green;
+          }
+          &::-webkit-progress-bar {
+            background-color: rgb(230, 230, 230);
+          }
+        }
+      }
+      .creditScoreChart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
