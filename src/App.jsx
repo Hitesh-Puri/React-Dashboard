@@ -1,29 +1,50 @@
-import React from 'react'
-import './styles/global.scss';
-import { RouterProvider, createBrowserRouter, Outlet } from 'react-router-dom';
-import Navbar from './components/navbar/Navbar';
-import Home from './pages/home/Home';
-import Menu from './components/menu/Menu';
-import FinancialInfo from './pages/financialInfo/FinancialInfo';
-import ContactInfo from './pages/contactInfo/ContactInfo';
-import CreditDetails from './pages/users/Users';
-import Footer from './components/footer/Footer';
+import React from "react";
+import "./styles/global.scss";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/home/Home";
+import Menu from "./components/menu/Menu";
+import FinancialInfo from "./pages/financialInfo/FinancialInfo";
+import ContactInfo from "./pages/contactInfo/ContactInfo";
+import CreditDetails from "./pages/users/Users";
+import Footer from "./components/footer/Footer";
+import { AuthProvider, useAuth } from "./utility/auth";
+import { Login } from "./pages/login/Login";
+import { Profile } from "./components/profile/Profile";
+import { RequireAuth } from "./utility/RequireAuth";
 
 function App() {
   const Layout = () => {
+    const navigate = useNavigate();
+    const user = useAuth();
+
+    // Redirect to login if user is not authenticated
+    React.useEffect(() => {
+      if (!user) {
+        navigate("/login");
+      }
+    }, [user, navigate]);
+
     return (
-      <div className="main">
-        <Navbar />
-        <div className="container">
-          <div className="menuContainer">
-            <Menu />
+      <AuthProvider>
+        <div className="main">
+          <Navbar />
+          <div className="container">
+            <div className="menuContainer">
+              <Menu />
+            </div>
+            <div className="contentContainer">
+              <Outlet />
+            </div>
           </div>
-          <div className="contentContainer">
-            <Outlet />
-          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </AuthProvider>
     );
   };
 
@@ -34,39 +55,67 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: (
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          ),
         },
         {
           path: "/creditDetails",
-          element: <CreditDetails />,
+          element: (
+            <RequireAuth>
+              <CreditDetails />
+            </RequireAuth>
+          ),
         },
         {
           path: "/financialInfo",
-          element: <FinancialInfo />,
+          element: (
+            <RequireAuth>
+              <FinancialInfo />
+            </RequireAuth>
+          ),
         },
         {
           path: "/financialAnalysis",
-          element: <FinancialInfo />,
+          element: (
+            <RequireAuth>
+              <FinancialInfo />
+            </RequireAuth>
+          ),
         },
         {
           path: "/documents",
-          element: <ContactInfo />,
+          element: (
+            <RequireAuth>
+              <ContactInfo />
+            </RequireAuth>
+          ),
         },
         {
           path: "/contactInfo",
-          element: <ContactInfo />,
+          element: (
+            <RequireAuth>
+              <ContactInfo />
+            </RequireAuth>
+          ),
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/profile",
+          element: (
+            <Profile />
+          ),
         },
       ],
     },
-    // {
-    //   path: "/login",
-    //   element: <Login />,
-    // }
   ]);
 
-  return (
-    <RouterProvider router={router} />
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

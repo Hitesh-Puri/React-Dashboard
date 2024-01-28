@@ -16,10 +16,27 @@ To install the necessary dependencies, follow the steps below:
 2. After cloning the project, run `npm install`. This will install all the necessary dependencies.
 3. After the dependencies have been installed, run `npm run dev`. This will initialize the project and will take you to the localhost where you can see the project.
 
+**Note:** For the icons used in the project you need to write the following code in _index.html_ file:
+
+```html
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
+```
+
+### Login functionality has been implemented via react-router-dom
+
 ## Libary Used
 
 - React
+- React-router-dom
+- SASS
 - Chart.js
 - React-chartjs-2
 
-You can locate all the libraries in the package.json file.
+Feel free to explore the package.json file for a complete list of dependencies.
